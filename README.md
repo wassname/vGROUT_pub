@@ -11,7 +11,7 @@ mechanism so far is signed-CorDA absorption: in one 4B run, deployment ablation
 reduced held-out hack rate from 0.759 to 0.218 while solve rate moved from
 0.161 to 0.149. That is mechanism evidence, not a deployable operating point.
 
-An accompanying LessWrong write-up is forthcoming. The public evidence summary
+An accompanying [LessWrong write-up](https://www.lesswrong.com/posts/kzri5W2uBfF2mdboK/can-we-use-steering-vectors-to-suppress-reward-hacking-1). The public evidence summary
 is in [docs/research_notes.md](docs/research_notes.md).
 
 This repository is the minimal public extraction of the working core:
