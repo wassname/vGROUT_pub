@@ -19,27 +19,27 @@ smoke *ARGS:
     just smoke-routeA {{ ARGS }}
 
 smoke-vanilla *ARGS:
-    BEARTYPE=1 {{ TRAIN }} smoke --intervention=none \
+    CUDA_VISIBLE_DEVICES="" BEARTYPE=1 {{ TRAIN }} smoke --intervention=none \
         --teacher-pool-dir={{ TEACHER_POOL }} --mix-ratio=0.5 {{ ARGS }}
 
 smoke-routeA *ARGS:
-    BEARTYPE=1 {{ TRAIN }} smoke --intervention=routeA \
+    CUDA_VISIBLE_DEVICES="" BEARTYPE=1 {{ TRAIN }} smoke --intervention=routeA \
         --teacher-pool-dir={{ TEACHER_POOL }} --mix-ratio=0.5 \
         --eval-ablate-every=10 --eval-n-prompts=2 {{ ARGS }}
 
 smoke-routeV *ARGS:
-    BEARTYPE=1 {{ TRAIN }} smoke --intervention=routeV \
+    CUDA_VISIBLE_DEVICES="" BEARTYPE=1 {{ TRAIN }} smoke --intervention=routeV \
         --teacher-pool-dir={{ TEACHER_POOL }} --mix-ratio=0.5 \
         --eval-ablate-every=10 --eval-n-prompts=2 {{ ARGS }}
 
 smoke-absorb *ARGS:
-    BEARTYPE=1 {{ TRAIN }} smoke --intervention=absorb \
+    CUDA_VISIBLE_DEVICES="" BEARTYPE=1 {{ TRAIN }} smoke --intervention=absorb \
         --teacher-pool-dir={{ TEACHER_POOL }} --mix-ratio=0.5 \
         --eval-ablate-every=10 --eval-n-prompts=2 {{ ARGS }}
 
 smoke-scorda *ARGS:
     uv run python scripts/verify_scorda.py
-    BEARTYPE=1 {{ TRAIN }} smoke --intervention=absorb --adapter=scorda \
+    CUDA_VISIBLE_DEVICES="" BEARTYPE=1 {{ TRAIN }} smoke --intervention=absorb --adapter=scorda \
         --teacher-pool-dir={{ TEACHER_POOL }} --mix-ratio=0.5 \
         --eval-ablate-every=10 --eval-n-prompts=2 {{ ARGS }}
 
@@ -48,9 +48,6 @@ smoke-all:
     just smoke-routeA
     just smoke-routeV
     just smoke-absorb
-
-results:
-    uv run python scripts/results_deploy.py
 
 download-tiny:
     uv run python -c "from huggingface_hub import snapshot_download; snapshot_download('llamafactory/tiny-random-qwen3')"

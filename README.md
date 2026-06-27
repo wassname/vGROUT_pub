@@ -7,9 +7,12 @@ adapter parameters.
 The current evidence is a partial negative for label-free vector routing. The
 hand-authored activation direction did not beat Haar-random directions as a
 high-precision routing classifier in the strongest offline checks. The useful
-mechanism so far is signed-CorDA absorption: the quarantine block can absorb a
-large share of the hack capability, but the resulting model is still weak and
-not clean enough to deploy.
+mechanism so far is signed-CorDA absorption: in one 4B run, deployment ablation
+reduced held-out hack rate from 0.759 to 0.218 while solve rate moved from
+0.161 to 0.149. That is mechanism evidence, not a deployable operating point.
+
+An accompanying LessWrong write-up is forthcoming. The public evidence summary
+is in [docs/research_notes.md](docs/research_notes.md).
 
 This repository is the minimal public extraction of the working core:
 
@@ -20,8 +23,7 @@ This repository is the minimal public extraction of the working core:
 - `data/leetcode/`: benchmark jsonl files needed by smoke/eval.
 - `data/pools/` and `data/pairsets/`: small curated artifacts needed by the
   correctness gates.
-- `docs/research_journal.md`: append-only lab notebook. Treat it as evidence
-  with provenance, not as polished claims.
+- `docs/research_notes.md`: concise public notes matching the write-up.
 
 ## Quick Start
 
@@ -55,8 +57,7 @@ watching quarantine update mass as a confound.
 
 ## Status
 
-The present result is not a clean success. The journal entry
-`docs/research_journal.md` for 2026-06-27 summarizes the evidence:
+The present result is not a clean success:
 
 - oracle-labelled rollout directions show a real linear signal;
 - hand-authored oracle-free pairs do not reliably align with that signal;

@@ -9,7 +9,7 @@ the unit-normalized mean paired difference:
 
 Diagnostic basis: RESEARCH_JOURNAL 2026-06-11 (d) -- on the A>0 contrast this
 score replicates across three emergence windows (AUROC 0.87/0.75/0.75) while the
-gradient score decays to chance; see docs/spec/20260611_act_gate_spec.md.
+gradient score decays to chance.
 `tstat=True` divides the mean by its standard error over pairs (clamped |t|<=3)
 before normalizing; null at the current 8 pairs, kept for larger pair sets.
 

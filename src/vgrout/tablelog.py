@@ -21,7 +21,7 @@ LOGS_DIR = Path("logs")
 def setup_logging(run_id: str) -> Path:
     """Token-efficient loguru: stdout = 1-char icon + msg; verbose log to file.
 
-    See /root/.claude/skills/token-efficient-logging/SKILL.md.
+    Keep logs dense enough for post-hoc run review.
     """
     LOGS_DIR.mkdir(exist_ok=True)
     verbose_log = LOGS_DIR / f"{datetime.now().strftime('%Y%m%dT%H%M%S')}_{run_id}.log"

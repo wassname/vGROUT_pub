@@ -10,11 +10,8 @@ GRPO updates into deployed or quarantine adapter parameters. The routeA gate
 scores pooled bottleneck activations against `v_act` extracted from authored
 hack/clean pairs, then assigns each rollout to keep, absorb, or route.
 
-The current result is a partial negative for label-free vector routing. The
-research journal is evidence, not polished claims:
-
-- `docs/research_journal.md`
-- `docs/human_journal.md`
+The current result is a partial negative for label-free vector routing. Use
+`docs/research_notes.md` as the public evidence summary.
 
 ## Commands
 

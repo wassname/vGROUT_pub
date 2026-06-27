@@ -82,7 +82,6 @@ def main() -> int:
             and len(load_pairs(Path("data/pairs/hack_pairs.md#all-in-one@think-tags"))) == 1
             and len(load_pairs(Path("data/pairs/hack_pairs.md#all-in-one@behavior,opportunity-aware"))) == 6
             and _must_raise(lambda: load_pairs(Path("data/pairs/hack_pairs.md#all-in-one@not-a-tag")))
-            and len(load_pairs(Path("data/pairs/pair_diagnostics.md#null-vampire"))) == 12
             and len(load_pairs(Path("data/pairsets/prog_wide_clean.json"))) == 8
         )
         rows.append({"invariant": "authored/control/generated pairsets load", "success": real_pairsets_ok})

@@ -1,6 +1,6 @@
 """Verify the train/test EVAL-TOKEN GAP (v2: lenient disjoint families) for all 4 modes.
 
-v2 after external review (docs/spec/20260606_eval_gap_v2_plan.md): eval grades against a
+Eval grades against a
 DISJOINT family, equally lenient as train (no strictness shift), so a memorized TRAIN token
 scores 0 at eval and only producing the eval-disclosed mechanism counts. run_tests is exact
 (a fn name has no family). This gate proves, for EVERY eval token of EVERY mode, with a WRONG
